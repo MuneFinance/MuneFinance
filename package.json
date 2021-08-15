@@ -32,7 +32,7 @@
     "eslint-plugin-json": "^3.0.0",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-unused-imports": "^1.1.1",
-    "ethereum-waffle": "^3.3.0",
+    "ethereum-waffle": "^3.4.0",
     "ethers": "^5.3.0",
     "ethlint": "^1.2.5",
     "hardhat": "^2.3.0",
