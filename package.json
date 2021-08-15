@@ -24,7 +24,7 @@
     "@typechain/hardhat": "^2.0.1",
     "@types/chai": "^4.2.18",
     "@types/mocha": "^8.2.2",
-    "@typescript-eslint/eslint-plugin": "^4.26.0",
+    "@typescript-eslint/eslint-plugin": "^4.29.1",
     "@typescript-eslint/parser": "^4.26.0",
     "chai": "^4.3.4",
     "eslint": "^7.25.0",
@@ -80,7 +80,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MuneFinance/MuneContracts"
+    "url": "git+https://github.com/MuneFinance/MuneFinance"
   },
   "keywords": [
     "cryptocurrency",
