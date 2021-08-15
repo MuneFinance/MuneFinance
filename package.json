@@ -1,0 +1,98 @@
+{
+  "name": "mune-contract",
+  "version": "0.0.1",
+  "description": "The smart contracts behind Mune 🌘",
+  "files": [
+    "dist/**/*"
+  ],
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "@eth-optimism/smock": "^1.1.4",
+    "@openzeppelin/contracts": "3.4.1",
+    "@openzeppelin/contracts-upgradeable": "^3.4.1",
+    "dotenv": "^10.0.0",
+    "synthetix": "2.45.2"
+  },
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.2",
+    "@nomiclabs/hardhat-etherscan": "^2.1.4",
+    "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "@nomiclabs/hardhat-web3": "^2.0.0",
+    "@typechain/ethers-v5": "^7.0.0",
+    "@typechain/hardhat": "^2.0.1",
+    "@types/chai": "^4.2.18",
+    "@types/mocha": "^8.2.2",
+    "@typescript-eslint/eslint-plugin": "^4.26.0",
+    "@typescript-eslint/parser": "^4.26.0",
+    "chai": "^4.3.4",
+    "eslint": "^7.25.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-json": "^3.0.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-unused-imports": "^1.1.1",
+    "ethereum-waffle": "^3.3.0",
+    "ethers": "^5.3.0",
+    "ethlint": "^1.2.5",
+    "hardhat": "^2.3.0",
+    "hardhat-deploy": "^0.7.10",
+    "hardhat-gas-reporter": "^1.0.4",
+    "hardhat-spdx-license-identifier": "^2.0.3",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.3.0",
+    "prettier-plugin-solidity": "^1.0.0-beta.11",
+    "shelljs": "^0.8.4",
+    "solhint": "^3.3.6",
+    "solhint-plugin-prettier": "0.0.5",
+    "solidity-coverage": "^0.7.16",
+    "solidity-docgen": "^0.5.13",
+    "ts-generator": "^0.1.1",
+    "ts-node": "^10.0.0",
+    "typechain": "^5.0.0",
+    "typescript": "^4.3.2"
+  },
+  "scripts": {
+    "lint": "npm run lint:ts && npm run lint:sol && npm run lint:json",
+    "lint:fix": "npm run lint:fix:ts && npm run lint:fix:sol && npm run lint:fix:json",
+    "lint:ts": "eslint --ext ts test/ && eslint --ext ts deploy/ && prettier --list-different {test,deploy}/**/*.ts",
+    "lint:fix:ts": "eslint --ext ts --fix test/ && eslint --ext ts --fix deploy/ && prettier --write {test,deploy}/**/*.ts",
+    "lint:json": "eslint --ext json deployments/ && prettier --list-different deployments/**/*.json",
+    "lint:fix:json": "eslint --ext json deployments/ && prettier --write deployments/**/*.json",
+    "lint:sol": "solhint 'contracts/**/*.sol'",
+    "lint:fix:sol": "prettier --write 'contracts/**/*.sol' && solhint 'contracts/**/*.sol' --fix",
+    "build": "hardhat compile",
+    "test": "hardhat test",
+    "coverage": "hardhat coverage --temp ./build/artifacts",
+    "deploy": "hardhat deploy --network matic",
+    "start": "hardhat node --show-accounts",
+    "fork": "export FORK_MAINNET=true && hardhat node --fork-deployments mainnet --as-network localhost --show-accounts ; unset FORK_MAINNET",
+    "prepare": "npm run build"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "config": {
+    "eslintPaths": "test/ deploy/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MuneFinance/MuneContracts"
+  },
+  "keywords": [
+    "cryptocurrency",
+    "stablecoin",
+    "charity",
+    "ethereum",
+    "giving",
+    "defi"
+  ],
+  "author": "🌝",
+  "license": "MIT",
+  "lint-staged": {
+    "*.ts": "eslint --cache --fix"
+  }
+}
